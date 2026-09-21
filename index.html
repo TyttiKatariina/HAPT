@@ -13,7 +13,7 @@ var respecConfig = {
   subtitle: "A SKOS vocabulary for deploying high-risk AI systems and assessing their impact on fundamental rights",
   latestVersion: "https://tyttikatariina.github.io/HAPT/",
   publishDate: "2026-09-21",
-  editors: [{ name: "TyttiKatariina", url: "https://github.com/TyttiKatariina" }],
+  editors: [{ name: "Tytti Rintamäki", company: "ADAPT Centre, Dublin City University", url: "https://github.com/TyttiKatariina" }],[{ name: "Harshvardhan J. Pandit", company: "AI Acountability Lab, Trinity College Dublin", url: "https://github.com/coolharsh55" }]
   github: { repoURL: "https://github.com/TyttiKatariina/HAPT", branch: "main" },
   maxTocLevel: 2,
   lint: false
@@ -34,14 +34,14 @@ var respecConfig = {
 </head>
 <body>
 <section id="abstract">
-<p>HAPT is a vocabulary for describing who deploys high-risk AI systems, where and for what purpose, who is affected, and which oversight, instructions, governance and complaint mechanisms apply. Its taxonomies follow the elements of the fundamental rights impact assessment in Article 27 of the EU AI Act.</p>
+<p>HAPT is a vocabulary for describing high-risk AI system and data protection use cases. This vocabulary represents the use cases derived from the IMPACTO ontology. HAPT includes entities, affected entities, sectors, intended purposes etc. These concepts are derived from Art. 27 and Annex III of the EU AI Act and Art 35. of the GDPR. This vocabulary builds on the existing work of Dr. Delaram Golpayegani, specifically reusing AIRO and VAIR as per the Linked Open Terms methodology to avoid duplicative efforts.</p>
 </section>
 <section id="sotd">
 <p>This is an unofficial draft. The machine-readable files <a href="hapt.ttl">hapt.ttl</a>, <a href="hapt.rdf">hapt.rdf</a> and <a href="hapt.jsonld">hapt.jsonld</a> are the normative source; this page is generated from them.</p>
 </section>
 
 <section id="introduction"><h2>Introduction</h2>
-<p>HAPT organises the concepts needed to describe the deployment of a high-risk AI system under the EU AI Act. It grew from an entity mapping of high-risk AI actors and extends it with taxonomies for each element that a deployer must describe in a fundamental rights impact assessment (FRIA).</p>
+<p>HAPT organises the concepts needed to represent high-risk use cases of high-risk AI systems found in Annex III of the EU AI Act and high risk data protection use cases found in Art. 35 pf the GDPR as well as guidelines from 30 EU/EEA member states. </p>
 <p>Every concept is a <code>skos:Concept</code> in one concept scheme. Concepts are organised with <code>skos:broader</code> and <code>skos:narrower</code>, linked across taxonomies with <code>skos:related</code>, and each taxonomy is a <code>skos:Collection</code>. HAPT reuses existing vocabularies instead of redefining them: concepts are mapped to <a href="https://w3id.org/dpv">DPV</a> and its <a href="https://w3id.org/dpv/legal/eu/aiact">EU AI Act extension</a>, <a href="https://w3id.org/airo">AIRO</a> and <a href="https://w3id.org/vair">VAIR</a> with <code>skos:exactMatch</code>, <code>skos:closeMatch</code> and <code>skos:broadMatch</code>.</p>
 <p>HAPT consists of the following taxonomies:</p>
 <table class="simple"><thead><tr><th>Taxonomy</th><th>AI Act element</th><th>Concepts</th></tr></thead><tbody><tr><td><a href="#tax-entities">Entities</a></td><td>Art. 27(1)(a)</td><td>121</td></tr><tr><td><a href="#tax-sectors">Sectors</a></td><td>Annex III</td><td>18</td></tr><tr><td><a href="#tax-purposes">Intended Purposes</a></td><td>Art. 27(1)(a)</td><td>64</td></tr><tr><td><a href="#tax-affected">Affected Entities</a></td><td>Art. 27(1)(c)</td><td>17</td></tr><tr><td><a href="#tax-aisubjects">AI Subjects</a></td><td>Art. 27(1)(c)</td><td>36</td></tr><tr><td><a href="#tax-datasubjects">Data Subjects</a></td><td>Art. 26(9); Art. 27(4)</td><td>30</td></tr><tr><td><a href="#tax-oversight">Human Oversight Measures</a></td><td>Art. 27(1)(e)</td><td>25</td></tr><tr><td><a href="#tax-ifu">Instructions for Use</a></td><td>Art. 27(1)(a), (e)</td><td>14</td></tr><tr><td><a href="#tax-governance">Internal Governance and Complaint Mechanisms</a></td><td>Art. 27(1)(f)</td><td>27</td></tr><tr><td><a href="#tax-assessments">Assessments</a></td><td>Art. 27</td><td>4</td></tr></tbody></table>
