@@ -1,7 +1,7 @@
 # HAPT Vocabulary
-High-Risk AI and Data Protection Taxonomy
+High-Risk AI and data Processing Terms
 
-A SKOS vocabulary for high-risk AI systems and data protection use cases. This taxonomy includes all 30 EU/EEA Member State Data Protection Authorities "blacklists" and "whitelists", as well as the Fundamental Rights Impact Assessment (FRIA) as per the EU AI Act. This work builds on the analysis of all DPIA required and DPIA not required processing activities and that information can be found here: [https://tyttikatariina.github.io/High-Risk-Categorisations-in-GDPR-vs-AI-Act/](https://tyttikatariina.github.io/High-Risk-Categorisations-in-GDPR-vs-AI-Act/). Accessible at: [https://tyttikatariina.github.io/HAPT/](https://tyttikatariina.github.io/HAPT/). This taxonomy reused the Data Privacy Vocabulary, AIRO and VAIR. 
+A SKOS vocabulary for high-risk AI systems and personal data processing use cases. This taxonomy includes all 30 EU/EEA Member State Data Protection Authorities "blacklists" and "whitelists", as well as the Fundamental Rights Impact Assessment (FRIA) as per the EU AI Act. This work builds on the analysis of all DPIA required and DPIA not required processing activities and that information can be found here: [https://tyttikatariina.github.io/High-Risk-Categorisations-in-GDPR-vs-AI-Act/](https://tyttikatariina.github.io/High-Risk-Categorisations-in-GDPR-vs-AI-Act/). Accessible at: [https://tyttikatariina.github.io/HAPT/](https://tyttikatariina.github.io/HAPT/). This taxonomy reused the Data Privacy Vocabulary, AIRO and VAIR. 
 
 **Contact:**
 This ontology is created and maintained by:
