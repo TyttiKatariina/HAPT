@@ -193,21 +193,6 @@
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#dpv-Accounting</skos:changeNote>
     </skos:Concept>
 
-    <!-- https://tyttikatariina.github.io/HAPT/#sector-finance-AccountManagement -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#sector-finance-AccountManagement">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Account Management</skos:prefLabel>
-        <skos:notation>sector-finance-AccountManagement</skos:notation>
-        <skos:definition xml:lang="en">The operation and administration of accounts held by an organisation.</skos:definition>
-        <skos:broader rdf:resource="https://w3id.org/dpv/sector/finance#FinancialServiceManagement"/>
-        <skos:note xml:lang="en">Proposed for: DPV finance sector extension (sector-finance)</skos:note>
-        <skos:note xml:lang="en">Source condition: DPIA Not Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN25)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#sector-finance-AccountManagement</skos:changeNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (sector-finance:AccountManagement, dpv:AccountManagement); check whether it can be reused instead.</skos:editorialNote>
-    </skos:Concept>
-
     <!-- https://tyttikatariina.github.io/HAPT/#sector-finance-AccountOperation -->
 
     <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#sector-finance-AccountOperation">
@@ -216,7 +201,7 @@
         <skos:notation>sector-finance-AccountOperation</skos:notation>
         <skos:definition xml:lang="en">Purposes associated with operating accounts, such as operating and cost accounts.</skos:definition>
         <skos:scopeNote xml:lang="en">Added from the condition files (DPIARequiredConditions.ttl / DPIANotRequiredConditions-2.ttl), where it was written in the impacto: namespace.</skos:scopeNote>
-        <skos:broader rdf:resource="https://tyttikatariina.github.io/HAPT/#sector-finance-AccountManagement"/>
+        <skos:broader rdf:resource="https://w3id.org/dpv/sector/finance#AccountManagement"/>
         <skos:note xml:lang="en">Proposed for: DPV finance sector extension (sector-finance)</skos:note>
         <skos:note xml:lang="en">Source condition: DPIA Not Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN25)</skos:note>
@@ -637,22 +622,6 @@
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#dpv-CulturalEvent</skos:changeNote>
     </skos:Concept>
 
-    <!-- https://tyttikatariina.github.io/HAPT/#DataBreachNotification -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#DataBreachNotification">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Data Breach Notification</skos:prefLabel>
-        <skos:notation>DataBreachNotification</skos:notation>
-        <skos:definition xml:lang="en">Purposes associated with notifying a personal data breach to the supervisory authority or communicating it to the data subjects concerned.</skos:definition>
-        <skos:scopeNote xml:lang="en">Added from the condition files (DPIARequiredConditions.ttl / DPIANotRequiredConditions-2.ttl), where it was written in the impacto: namespace.</skos:scopeNote>
-        <skos:broader rdf:resource="https://w3id.org/dpv#IncidentReportingCommunication"/>
-        <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Required lists: CY (conditions C108)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#DataBreachNotification</skos:changeNote>
-        <skos:editorialNote xml:lang="en">Draft definition, not yet reviewed.</skos:editorialNote>
-        <skos:editorialNote xml:lang="en">DPV 2.3 already defines dpv:DataBreachNotification; check whether it can be reused instead.</skos:editorialNote>
-    </skos:Concept>
-
     <!-- https://tyttikatariina.github.io/HAPT/#dpv-DataEvaluation -->
 
     <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#dpv-DataEvaluation">
@@ -741,7 +710,6 @@
         <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN20, CN48)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#dpv-Documentation</skos:changeNote>
         <skos:editorialNote xml:lang="en">Draft definition, not yet reviewed.</skos:editorialNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (tech:Documentation); check whether it can be reused instead.</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#dpv-DocumentTransmission -->
@@ -1836,21 +1804,6 @@
         <skos:note xml:lang="en">Source condition: DPIA Not Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN21)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#sector-health-PatientCareBilling</skos:changeNote>
-    </skos:Concept>
-
-    <!-- https://tyttikatariina.github.io/HAPT/#sector-health-PatientInformationManagement -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#sector-health-PatientInformationManagement">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Patient Information Management</skos:prefLabel>
-        <skos:notation>sector-health-PatientInformationManagement</skos:notation>
-        <skos:definition xml:lang="en">The management of patient and client information by individually active health service providers.</skos:definition>
-        <skos:broader rdf:resource="https://w3id.org/dpv#Purpose"/>
-        <skos:note xml:lang="en">Proposed for: DPV health sector extension (sector-health)</skos:note>
-        <skos:note xml:lang="en">Source condition: DPIA Not Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN21)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#sector-health-PatientInformationManagement</skos:changeNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (sector-health:PatientInformationManagement); check whether it can be reused instead.</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#dpv-Payments -->
@@ -5887,21 +5840,6 @@
         <skos:editorialNote xml:lang="en">Merged: the condition files use dpv-MultiOccupancyProperty; the previous index named this term loc-MultiOccupancyProperty. The condition-file spelling is used for the IRI.</skos:editorialNote>
     </skos:Concept>
 
-    <!-- https://tyttikatariina.github.io/HAPT/#loc-PersonalSpace -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#loc-PersonalSpace">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Personal Space</skos:prefLabel>
-        <skos:notation>loc-PersonalSpace</skos:notation>
-        <skos:definition xml:lang="en">Refers to private areas such as homes or personal environments, where data processing even with consent may infringe on privacy due to the sensitive nature of the setting.</skos:definition>
-        <skos:broader rdf:resource="https://w3id.org/dpv#LocationLocality"/>
-        <skos:note xml:lang="en">Proposed for: DPV location extension (loc)</skos:note>
-        <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Required lists: AT (conditions C90)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#loc-PersonalSpace</skos:changeNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (dpv:PersonalSpace); check whether it can be reused instead.</skos:editorialNote>
-    </skos:Concept>
-
     <!-- https://tyttikatariina.github.io/HAPT/#dpv-PotentiallyHazardousLocation -->
 
     <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#dpv-PotentiallyHazardousLocation">
@@ -6410,18 +6348,19 @@
      -->
 
 
-    <!-- https://tyttikatariina.github.io/HAPT/#risk-ContractExclusion -->
+    <!-- https://tyttikatariina.github.io/HAPT/#dpv-ContractExclusion -->
 
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-ContractExclusion">
+    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#dpv-ContractExclusion">
         <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
         <skos:prefLabel xml:lang="en">Contract Exclusion</skos:prefLabel>
-        <skos:notation>risk-ContractExclusion</skos:notation>
+        <skos:notation>dpv-ContractExclusion</skos:notation>
         <skos:definition xml:lang="en">Where an individual or an organisation is denied the opportunity to enter into a contract.</skos:definition>
         <skos:broader rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-ImpactOnContract"/>
-        <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
+        <skos:note xml:lang="en">Proposed for: DPV core (dpv)</skos:note>
         <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-ContractExclusion</skos:changeNote>
+        <skos:editorialNote xml:lang="en">Renamed from risk-ContractExclusion to dpv-ContractExclusion following the concept register (9 November 2026).</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#risk-ContractRefused -->
@@ -6438,33 +6377,19 @@
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-ContractRefused</skos:changeNote>
     </skos:Concept>
 
-    <!-- https://tyttikatariina.github.io/HAPT/#risk-ContractSuspension -->
+    <!-- https://tyttikatariina.github.io/HAPT/#dpv-ContractSuspension -->
 
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-ContractSuspension">
+    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#dpv-ContractSuspension">
         <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
         <skos:prefLabel xml:lang="en">Contract Suspension</skos:prefLabel>
-        <skos:notation>risk-ContractSuspension</skos:notation>
+        <skos:notation>dpv-ContractSuspension</skos:notation>
         <skos:definition xml:lang="en">Where an existing contract is temporarily halted or rendered inactive, such as due to suspicion of fraud, violation of terms, or negative behavioural indicators.</skos:definition>
         <skos:broader rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-ImpactOnContract"/>
-        <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
+        <skos:note xml:lang="en">Proposed for: DPV core (dpv)</skos:note>
         <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-ContractSuspension</skos:changeNote>
-    </skos:Concept>
-
-    <!-- https://tyttikatariina.github.io/HAPT/#risk-ContractTerminated -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-ContractTerminated">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Contract Terminated</skos:prefLabel>
-        <skos:notation>risk-ContractTerminated</skos:notation>
-        <skos:definition xml:lang="en">Where an existing contract is cancelled or terminated, such as by revoking a loan, ending a subscription, or dismissing an employee.</skos:definition>
-        <skos:broader rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-ImpactOnContract"/>
-        <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
-        <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-ContractTerminated</skos:changeNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (dpv:ContractTerminated); check whether it can be reused instead.</skos:editorialNote>
+        <skos:editorialNote xml:lang="en">Renamed from risk-ContractSuspension to dpv-ContractSuspension following the concept register (9 November 2026).</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#risk-ImpactOnCareer -->
@@ -6491,7 +6416,7 @@
         <skos:broader rdf:resource="https://w3id.org/dpv#Impact"/>
         <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
         <skos:note xml:lang="en">Source condition: DPIA Required; Annex III</skos:note>
-        <skos:note xml:lang="en">Source: No source recorded for this concept; the source conditions shown are those of its narrower concepts: risk-ContractExclusion, risk-ContractRefused, risk-ContractSuspension, risk-ContractTerminated, risk-WorkRelationshipTermsAffected.</skos:note>
+        <skos:note xml:lang="en">Source: No source recorded for this concept; the source conditions shown are those of its narrower concepts: dpv-ContractExclusion, risk-ContractRefused, dpv-ContractSuspension, dpv:ContractTerminated, risk-WorkRelationshipTermsAffected.</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-ImpactOnContract</skos:changeNote>
     </skos:Concept>
 
@@ -6517,20 +6442,20 @@
         <skos:notation>dpv-LegalEffect</skos:notation>
         <skos:definition xml:lang="en">A risk that processing results in legal effects for the data subjects.</skos:definition>
         <skos:broader rdf:resource="https://w3id.org/dpv#Risk"/>
-        <skos:exactMatch rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-LegalEffect"/>
+        <skos:exactMatch rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-LegalEffects"/>
         <skos:note xml:lang="en">Proposed for: DPV core (dpv)</skos:note>
         <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Required lists: BE, HR, GR, IS, IT, LV, LI, NO, PL, SI, ES, SE (conditions C17)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#dpv-LegalEffect</skos:changeNote>
-        <skos:editorialNote xml:lang="en">Same concept as hapt:risk-LegalEffect, written differently in the condition files. Kept as a separate term so that every concept in the condition files resolves; consider using one spelling in the condition files.</skos:editorialNote>
+        <skos:editorialNote xml:lang="en">Same concept as hapt:risk-LegalEffects, written differently in the condition files. Kept as a separate term so that every concept in the condition files resolves; consider using one spelling in the condition files.</skos:editorialNote>
     </skos:Concept>
 
-    <!-- https://tyttikatariina.github.io/HAPT/#risk-LegalEffect -->
+    <!-- https://tyttikatariina.github.io/HAPT/#risk-LegalEffects -->
 
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-LegalEffect">
+    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-LegalEffects">
         <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Legal Effect Risk</skos:prefLabel>
-        <skos:notation>risk-LegalEffect</skos:notation>
+        <skos:prefLabel xml:lang="en">Legal Effects</skos:prefLabel>
+        <skos:notation>risk-LegalEffects</skos:notation>
         <skos:definition xml:lang="en">A risk that processing results in legal effects for the data subjects.</skos:definition>
         <skos:scopeNote xml:lang="en">Used to indicate that a processing activity may result in effects equivalent to legal consequences for data subjects, such as denial of service or exclusion from contracts.</skos:scopeNote>
         <skos:broader rdf:resource="https://w3id.org/dpv#Risk"/>
@@ -6539,6 +6464,7 @@
         <skos:note xml:lang="en">Source: DPIA Required lists of all Member States (conditions C6, C8, C99, C105)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-LegalEffect</skos:changeNote>
         <skos:editorialNote xml:lang="en">The condition files also use the variant hapt:dpv-LegalEffect for this concept; it is listed separately as an exact match so that it resolves.</skos:editorialNote>
+        <skos:editorialNote xml:lang="en">Renamed from risk-LegalEffect to risk-LegalEffects following the concept register (9 November 2026).</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#risk-LimitRights -->
@@ -6599,21 +6525,6 @@
         <skos:note xml:lang="en">Source: AI Act Annex III, point 5(a) (Recital 58)</skos:note>
         <skos:note xml:lang="en">Annex III wording: reduced public assistance benefits, reduced public assistance services</skos:note>
         <skos:editorialNote xml:lang="en">Draft definition, not yet reviewed.</skos:editorialNote>
-    </skos:Concept>
-
-    <!-- https://tyttikatariina.github.io/HAPT/#risk-RightsExercisePrevented -->
-
-    <skos:Concept rdf:about="https://tyttikatariina.github.io/HAPT/#risk-RightsExercisePrevented">
-        <skos:inScheme rdf:resource="https://tyttikatariina.github.io/HAPT/"/>
-        <skos:prefLabel xml:lang="en">Rights Exercise Prevented</skos:prefLabel>
-        <skos:notation>risk-RightsExercisePrevented</skos:notation>
-        <skos:definition xml:lang="en">The risk of an activity preventing the ability of data subjects to exercise their rights.</skos:definition>
-        <skos:broader rdf:resource="https://w3id.org/dpv/risk#Impact"/>
-        <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
-        <skos:note xml:lang="en">Source condition: DPIA Required</skos:note>
-        <skos:note xml:lang="en">Source: Member State DPIA Required lists: CY, DE, GR, IT, LV, LI, LU, PL, SI, ES (conditions C19)</skos:note>
-        <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#risk-RightsExercisePrevented</skos:changeNote>
-        <skos:editorialNote xml:lang="en">Parent risk:Impact was not found in DPV 2.3.; A concept with the same name already exists in DPV 2.3 (risk:RightsExercisePrevented); check whether it can be reused instead.</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#risk-ServiceAccessAllowed -->
@@ -6744,7 +6655,7 @@
         <skos:prefLabel xml:lang="en">Work Relationship Termination</skos:prefLabel>
         <skos:notation>risk-WorkRelationshipTermination</skos:notation>
         <skos:definition xml:lang="en">Where a decision results in the termination of a work-related contractual relationship.</skos:definition>
-        <skos:broader rdf:resource="https://tyttikatariina.github.io/HAPT/#risk-ContractTerminated"/>
+        <skos:broader rdf:resource="https://w3id.org/dpv#ContractTerminated"/>
         <skos:related rdf:resource="https://w3id.org/dpv/legal/eu/aiact#HighRiskAISystem-AnnexIII-4-b"/>
         <skos:note xml:lang="en">Proposed for: DPV risk extension (risk)</skos:note>
         <skos:note xml:lang="en">Source condition: Annex III</skos:note>
@@ -7321,7 +7232,6 @@
         <skos:note xml:lang="en">Source condition: DPIA Not Required</skos:note>
         <skos:note xml:lang="en">Source: Member State DPIA Not Required lists (CN1)</skos:note>
         <skos:changeNote xml:lang="en">Previously https://tyttikatariina.github.io/IMPACTO/#dpv-RiskLevelNotHigh</skos:changeNote>
-        <skos:editorialNote xml:lang="en">A concept with the same name already exists in DPV 2.3 (eu-aiact:RiskLevelNotHigh); check whether it can be reused instead.</skos:editorialNote>
     </skos:Concept>
 
     <!-- https://tyttikatariina.github.io/HAPT/#dpv-StateLaw -->
