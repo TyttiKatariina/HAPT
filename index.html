@@ -108,13 +108,14 @@
       AI systems that the processes apply to. Both build on the <a href="https://w3id.org/dpv">Data Privacy Vocabulary (DPV)</a>:
       HAPT terms are placed under DPV parents wherever possible, and where DPV already has a term for an Annex III condition, that term is
       reused rather than redefined (see <a href="#annex3-reuse"></a>).</p>
-    <p>HAPT contains 483 terms: 421 derived from the analysis of Member State DPIA lists and from the DPIA Required and
+    <p>HAPT contains 477 terms: 415 derived from the analysis of Member State DPIA lists and from the DPIA Required and
       DPIA Not Required condition files, and 62 derived from Annex III of the AI Act. A further 86 existing DPV concepts are mapped to Annex III conditions.</p>
     <p>Every concept used in the condition files <code>DPIARequiredConditions.ttl</code> and <code>DPIANotRequiredConditions-2.ttl</code>
       is defined either here or in IMPACTO. Only the two high-level process classes, <a href="https://tyttikatariina.github.io/IMPACTO/#eu-gdpr-DPIARequiredProcess"><code>impacto:eu-gdpr-DPIARequiredProcess</code></a>
       and <a href="https://tyttikatariina.github.io/IMPACTO/#eu-gdpr-DPIANotRequiredProcess"><code>impacto:eu-gdpr-DPIANotRequiredProcess</code></a>, remain in the IMPACTO namespace;
       all other concepts in those files use the <code>hapt:</code> namespace. HAPT local names keep the module prefix of the DPV module each
       term is intended for (for example <code>hapt:dpv-DetectiveAgency</code>, <code>hapt:pd-Skills</code>, <code>hapt:sector-law-CivilLaw</code>), following the IMPACTO convention.</p>
+    <p>Six concepts that the condition files previously wrote in the IMPACTO namespace already exist in DPV and are reused from DPV directly, so they are not HAPT terms: <a href="https://w3id.org/dpv#DataBreachNotification"><code>dpv:DataBreachNotification</code></a>, <a href="https://w3id.org/dpv#ContractTerminated"><code>dpv:ContractTerminated</code></a>, <a href="https://w3id.org/dpv/risk#RightsExercisePrevented"><code>risk:RightsExercisePrevented</code></a>, <a href="https://w3id.org/dpv/sector/finance#AccountManagement"><code>sector-finance:AccountManagement</code></a>, <a href="https://w3id.org/dpv/sector/health#PatientInformationManagement"><code>sector-health:PatientInformationManagement</code></a>, <a href="https://w3id.org/dpv#PersonalSpace"><code>dpv:PersonalSpace</code></a>.</p>
   </section>
 
   <!-- SOURCE CONDITIONS -->
@@ -127,11 +128,11 @@
         <tr><td><span class="badge b-req">DPIA Required</span></td>
           <td>The term was derived from a processing activity that Member State Data Protection Authorities list as <i>requiring</i> a DPIA
             under GDPR Art. 35(4), or from the EDPB guidelines on DPIA. The <i>Source</i> row lists the Member States whose lists contain the
-            activity (see <a href="#jurisdictions"></a>).</td><td class="num">98</td></tr>
+            activity (see <a href="#jurisdictions"></a>).</td><td class="num">94</td></tr>
         <tr><td><span class="badge b-notreq">DPIA Not Required</span></td>
           <td>The term was derived from a processing activity that Member State Data Protection Authorities list as <i>not requiring</i> a DPIA
             under GDPR Art. 35(5). The <i>Source</i> row gives the CN identifier of each not-required processing activity the term was derived from.</td>
-          <td class="num">312</td></tr>
+          <td class="num">310</td></tr>
         <tr><td><span class="badge b-annex">Annex III</span></td>
           <td>The term was derived from Annex III of the AI Act, which lists the areas in which AI systems are high-risk under Art. 6(2).
             The <i>Source</i> row gives the Annex III point and recital, and the term is linked to the corresponding DPV
@@ -182,13 +183,13 @@
         <th><span class="badge b-notreq">Not Req.</span></th><th><span class="badge b-annex">Annex III</span></th></tr></thead>
       <tbody>
           <tr><td><a href="#sec-Domains">Domains</a></td><td>Areas of application or sectors in which processing or the use of an AI system takes place.</td><td class="num">7</td><td class="num">1</td><td class="num">1</td><td class="num">5</td></tr>
-          <tr><td><a href="#sec-Purposes">Purposes</a></td><td>Purposes and activities for which personal data are processed or AI systems are used.</td><td class="num">186</td><td class="num">19</td><td class="num">129</td><td class="num">40</td></tr>
+          <tr><td><a href="#sec-Purposes">Purposes</a></td><td>Purposes and activities for which personal data are processed or AI systems are used.</td><td class="num">183</td><td class="num">18</td><td class="num">127</td><td class="num">40</td></tr>
           <tr><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td>Contexts and conditions within which processing takes place, such as its scale, systematicity or automation.</td><td class="num">42</td><td class="num">14</td><td class="num">27</td><td class="num">0</td></tr>
           <tr><td><a href="#sec-Entities">Entities and Subjects</a></td><td>Organisations, authorities, professionals and categories of natural persons involved in or affected by processing.</td><td class="num">84</td><td class="num">2</td><td class="num">77</td><td class="num">4</td></tr>
           <tr><td><a href="#sec-PersonalData">Data Categories</a></td><td>Categories of personal data and other data whose processing is relevant to impact assessment conditions.</td><td class="num">57</td><td class="num">18</td><td class="num">37</td><td class="num">4</td></tr>
-          <tr><td><a href="#sec-Locations">Locations</a></td><td>Places and spaces in which processing or monitoring takes place.</td><td class="num">21</td><td class="num">12</td><td class="num">8</td><td class="num">2</td></tr>
+          <tr><td><a href="#sec-Locations">Locations</a></td><td>Places and spaces in which processing or monitoring takes place.</td><td class="num">20</td><td class="num">11</td><td class="num">8</td><td class="num">2</td></tr>
           <tr><td><a href="#sec-Technologies">Technologies and Capabilities</a></td><td>Technologies, devices and AI capabilities whose use is relevant to impact assessment conditions.</td><td class="num">21</td><td class="num">13</td><td class="num">5</td><td class="num">3</td></tr>
-          <tr><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td>Consequences and impacts on individuals that arise from processing or from the use of an AI system.</td><td class="num">24</td><td class="num">17</td><td class="num">0</td><td class="num">8</td></tr>
+          <tr><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td>Consequences and impacts on individuals that arise from processing or from the use of an AI system.</td><td class="num">22</td><td class="num">15</td><td class="num">0</td><td class="num">8</td></tr>
           <tr><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td>Legal grounds, exemptions, measures and assessment-process terms that determine whether, and how, an impact assessment is carried out.</td><td class="num">41</td><td class="num">2</td><td class="num">28</td><td class="num">0</td></tr>
       </tbody>
     </table>
@@ -215,7 +216,6 @@
           <tr data-src="notrequired"><td><a href="#dpv-AccessLogins">dpv-AccessLogins</a></td><td>Access Logins</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-AccommodationOrganisation">dpv-AccommodationOrganisation</a></td><td>Accommodation Organisation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Accounting">dpv-Accounting</a></td><td>Accounting</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="notrequired"><td><a href="#sector-finance-AccountManagement">sector-finance-AccountManagement</a></td><td>Account Management</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-finance-AccountOperation">sector-finance-AccountOperation</a></td><td>Account Operation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#tech-AcousticRecording">tech-AcousticRecording</a></td><td>Acoustic Recording</td><td><a href="#sec-Technologies">Technologies and Capabilities</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-AcquisitionCosts">dpv-AcquisitionCosts</a></td><td>Acquisition Costs</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -279,10 +279,9 @@
           <tr data-src="required"><td><a href="#pd-Competency">pd-Competency</a></td><td>Competency</td><td><a href="#sec-PersonalData">Data Categories</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-CompetitionOrganisation">dpv-CompetitionOrganisation</a></td><td>Competition Organisation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required"><td><a href="#pd-Conduct">pd-Conduct</a></td><td>Conduct</td><td><a href="#sec-PersonalData">Data Categories</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-ContractExclusion">risk-ContractExclusion</a></td><td>Contract Exclusion</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#dpv-ContractExclusion">dpv-ContractExclusion</a></td><td>Contract Exclusion</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ContractRefused">risk-ContractRefused</a></td><td>Contract Refused</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-ContractSuspension">risk-ContractSuspension</a></td><td>Contract Suspension</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-ContractTerminated">risk-ContractTerminated</a></td><td>Contract Terminated</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#dpv-ContractSuspension">dpv-ContractSuspension</a></td><td>Contract Suspension</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-ContractuallyAccessiblePlace">dpv-ContractuallyAccessiblePlace</a></td><td>Contractually Accessible Place</td><td><a href="#sec-Locations">Locations</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required"><td><a href="#dpv-ContractualObligation">dpv-ContractualObligation</a></td><td>Contractual Obligation</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#dpv-ControlHumanActivity">dpv-ControlHumanActivity</a></td><td>Control Human Activity</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
@@ -298,7 +297,6 @@
           <tr data-src="annex3"><td><a href="#dpv-CriticalInfrastructureOperation">dpv-CriticalInfrastructureOperation</a></td><td>Critical Infrastructure Operation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-CulturalEvent">dpv-CulturalEvent</a></td><td>Cultural Event</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-CulturalPrograms">dpv-CulturalPrograms</a></td><td>Cultural Programs</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="required"><td><a href="#DataBreachNotification">DataBreachNotification</a></td><td>Data Breach Notification</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-DataEvaluation">dpv-DataEvaluation</a></td><td>Data Evaluation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-DataProtectionAuthorityGuidance">dpv-DataProtectionAuthorityGuidance</a></td><td>Data Protection Authority Guidance</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required notrequired"><td><a href="#dpv-DataRegister">dpv-DataRegister</a></td><td>Data Register</td><td><a href="#sec-PersonalData">Data Categories</a></td><td><span class="badge b-req">DPIA Required</span> <span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -437,7 +435,7 @@
           <tr data-src="notrequired"><td><a href="#dpv-LegalBasisExemption">dpv-LegalBasisExemption</a></td><td>Legal Basis Exemption</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-law-LegalDuties">sector-law-LegalDuties</a></td><td>Legal Duties</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required"><td><a href="#dpv-LegalEffect">dpv-LegalEffect</a></td><td>Legal Effect Risk</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-LegalEffect">risk-LegalEffect</a></td><td>Legal Effect Risk</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#risk-LegalEffects">risk-LegalEffects</a></td><td>Legal Effects</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-LegalObligationFulfillment">dpv-LegalObligationFulfillment</a></td><td>Legal Obligation Fulfillment</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-LegalRequirement">dpv-LegalRequirement</a></td><td>Legal Requirement</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-LessThan250Employees">dpv-LessThan250Employees</a></td><td>Less Than 250 Employees</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -504,7 +502,6 @@
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCare">sector-health-PatientCare</a></td><td>Patient Care</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCareAdministration">sector-health-PatientCareAdministration</a></td><td>Patient Care Administration</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCareBilling">sector-health-PatientCareBilling</a></td><td>Patient Care Billing</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="notrequired"><td><a href="#sector-health-PatientInformationManagement">sector-health-PatientInformationManagement</a></td><td>Patient Information Management</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Payments">dpv-Payments</a></td><td>Payments</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Payroll">dpv-Payroll</a></td><td>Payroll</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#pd-Payroll">pd-Payroll</a></td><td>Payroll</td><td><a href="#sec-PersonalData">Data Categories</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -515,7 +512,6 @@
           <tr data-src="required"><td><a href="#dpv-PersonalDataDeletion">dpv-PersonalDataDeletion</a></td><td>Personal Data Deletion</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-PersonalDataRegisters">dpv-PersonalDataRegisters</a></td><td>Personal Data Registers</td><td><a href="#sec-PersonalData">Data Categories</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required"><td><a href="#dpv-PersonalDataRestriction">dpv-PersonalDataRestriction</a></td><td>Personal Data Restriction</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#loc-PersonalSpace">loc-PersonalSpace</a></td><td>Personal Space</td><td><a href="#sec-Locations">Locations</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="annex3"><td><a href="#dpv-PersonnelBehaviourEvaluation">dpv-PersonnelBehaviourEvaluation</a></td><td>Personnel Behaviour Evaluation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-PersonnelInTraining">dpv-PersonnelInTraining</a></td><td>Personnel In Training</td><td><a href="#sec-Entities">Entities and Subjects</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-PersonnelMeasures">dpv-PersonnelMeasures</a></td><td>Personnel Measures</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -597,7 +593,6 @@
           <tr data-src="notrequired"><td><a href="#dpv-ResidentialPurpose">dpv-ResidentialPurpose</a></td><td>Residential Purpose</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-ResidentialUse">dpv-ResidentialUse</a></td><td>Residential Use</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-RetentionPeriod">dpv-RetentionPeriod</a></td><td>Retention Period</td><td><a href="#sec-ProcessingContexts">Processing Contexts</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-RightsExercisePrevented">risk-RightsExercisePrevented</a></td><td>Rights Exercise Prevented</td><td><a href="#sec-Consequences">Consequences and Impacts</a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-RiskLevelNotHigh">dpv-RiskLevelNotHigh</a></td><td>Risk Level Not High</td><td><a href="#sec-LegalGrounds">Legal Grounds, Measures and Assessment Terms</a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="annex3"><td><a href="#dpv-RoadTrafficManagement">dpv-RoadTrafficManagement</a></td><td>Road Traffic Management</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="annex3"><td><a href="#dpv-RoadTrafficOperation">dpv-RoadTrafficOperation</a></td><td>Road Traffic Operation</td><td><a href="#sec-Purposes">Purposes</a></td><td><span class="badge b-annex">Annex III</span></td></tr>
@@ -835,8 +830,7 @@
       <tbody>
           <tr data-src="notrequired"><td><a href="#dpv-AccommodationOrganisation">dpv-AccommodationOrganisation</a></td><td>Accommodation Organisation</td><td><a href="#dpv-EventManagement"><code>hapt:dpv-EventManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Accounting">dpv-Accounting</a></td><td>Accounting</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="notrequired"><td><a href="#sector-finance-AccountManagement">sector-finance-AccountManagement</a></td><td>Account Management</td><td><a href="https://w3id.org/dpv/sector/finance#FinancialServiceManagement"><code>sector-finance:FinancialServiceManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="notrequired"><td><a href="#sector-finance-AccountOperation">sector-finance-AccountOperation</a></td><td>Account Operation</td><td><a href="#sector-finance-AccountManagement"><code>hapt:sector-finance-AccountManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
+          <tr data-src="notrequired"><td><a href="#sector-finance-AccountOperation">sector-finance-AccountOperation</a></td><td>Account Operation</td><td><a href="https://w3id.org/dpv/sector/finance#AccountManagement"><code>sector-finance:AccountManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-AcquisitionCosts">dpv-AcquisitionCosts</a></td><td>Acquisition Costs</td><td><a href="https://w3id.org/dpv#DataInventoryManagement"><code>dpv:DataInventoryManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="annex3"><td><a href="#dpv-AlternativeDisputeResolution">dpv-AlternativeDisputeResolution</a></td><td>Alternative Dispute Resolution</td><td><a href="https://w3id.org/dpv#DisputeManagement"><code>dpv:DisputeManagement</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-finance-AncillaryAccounting">sector-finance-AncillaryAccounting</a></td><td>Ancillary Accounting</td><td><a href="https://w3id.org/dpv/sector/finance#FinancialServiceManagement"><code>sector-finance:FinancialServiceManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -865,7 +859,6 @@
           <tr data-src="annex3"><td><a href="#dpv-CriticalInfrastructureManagement">dpv-CriticalInfrastructureManagement</a></td><td>Critical Infrastructure Management</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="annex3"><td><a href="#dpv-CriticalInfrastructureOperation">dpv-CriticalInfrastructureOperation</a></td><td>Critical Infrastructure Operation</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-CulturalEvent">dpv-CulturalEvent</a></td><td>Cultural Event</td><td><a href="#dpv-EventManagement"><code>hapt:dpv-EventManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="required"><td><a href="#DataBreachNotification">DataBreachNotification</a></td><td>Data Breach Notification</td><td><a href="https://w3id.org/dpv#IncidentReportingCommunication"><code>dpv:IncidentReportingCommunication</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-DataEvaluation">dpv-DataEvaluation</a></td><td>Data Evaluation</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-DeliveryOffering">dpv-DeliveryOffering</a></td><td>Delivery Offering</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-DemocraticParticipationManagement">dpv-DemocraticParticipationManagement</a></td><td>Democratic Participation Management</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -943,7 +936,6 @@
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCare">sector-health-PatientCare</a></td><td>Patient Care</td><td><a href="#sector-health-HealthCareProvision"><code>hapt:sector-health-HealthCareProvision</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCareAdministration">sector-health-PatientCareAdministration</a></td><td>Patient Care Administration</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#sector-health-PatientCareBilling">sector-health-PatientCareBilling</a></td><td>Patient Care Billing</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="notrequired"><td><a href="#sector-health-PatientInformationManagement">sector-health-PatientInformationManagement</a></td><td>Patient Information Management</td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Payments">dpv-Payments</a></td><td>Payments</td><td><a href="https://w3id.org/dpv/sector/finance#FinancialServiceManagement"><code>sector-finance:FinancialServiceManagement</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-Payroll">dpv-Payroll</a></td><td>Payroll</td><td><a href="https://w3id.org/dpv#PersonnelPayment"><code>dpv:PersonnelPayment</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-PayrollManagement">dpv-PayrollManagement</a></td><td>Payroll Management</td><td><a href="https://w3id.org/dpv#PersonnelPayment"><code>dpv:PersonnelPayment</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
@@ -1052,22 +1044,6 @@
           </tbody>
         </table>
       </section>
-      <section id="sector-finance-AccountManagement">
-        <h4>Account Management</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#sector-finance-AccountManagement</code></td></tr>
-            <tr><th>Term</th><td>sector-finance-AccountManagement</td></tr>
-            <tr><th>Label</th><td>Account Management</td></tr>
-            <tr><th>Definition</th><td>The operation and administration of accounts held by an organisation.</td></tr>
-            <tr><th>Parent</th><td><a href="https://w3id.org/dpv/sector/finance#FinancialServiceManagement"><code>sector-finance:FinancialServiceManagement</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Not Required lists (CN25)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#sector-finance-AccountManagement</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (sector-finance:AccountManagement, dpv:AccountManagement); check whether it can be reused instead.</td></tr>
-          </tbody>
-        </table>
-      </section>
       <section id="sector-finance-AccountOperation">
         <h4>Account Operation</h4>
         <table class="def">
@@ -1076,7 +1052,7 @@
             <tr><th>Term</th><td>sector-finance-AccountOperation</td></tr>
             <tr><th>Label</th><td>Account Operation</td></tr>
             <tr><th>Definition</th><td>Purposes associated with operating accounts, such as operating and cost accounts. <span class="draft" title="Draft definition">†</span></td></tr>
-            <tr><th>Parent</th><td><a href="#sector-finance-AccountManagement"><code>hapt:sector-finance-AccountManagement</code></a></td></tr>
+            <tr><th>Parent</th><td><a href="https://w3id.org/dpv/sector/finance#AccountManagement"><code>sector-finance:AccountManagement</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Not Required lists (CN25)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#sector-finance-AccountOperation</code></td></tr>
@@ -1516,23 +1492,6 @@
           </tbody>
         </table>
       </section>
-      <section id="DataBreachNotification">
-        <h4>Data Breach Notification</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#DataBreachNotification</code></td></tr>
-            <tr><th>Term</th><td>DataBreachNotification</td></tr>
-            <tr><th>Label</th><td>Data Breach Notification</td></tr>
-            <tr><th>Definition</th><td>Purposes associated with notifying a personal data breach to the supervisory authority or communicating it to the data subjects concerned. <span class="draft" title="Draft definition">†</span></td></tr>
-            <tr><th>Parent</th><td><a href="https://w3id.org/dpv#IncidentReportingCommunication"><code>dpv:IncidentReportingCommunication</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Required lists: CY (conditions C108)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#DataBreachNotification</code></td></tr>
-            <tr><th>Scope Note</th><td>Added from the condition files (DPIARequiredConditions.ttl / DPIANotRequiredConditions-2.ttl), where it was written in the impacto: namespace.</td></tr>
-            <tr class="review"><th>Review Note</th><td>DPV 2.3 already defines dpv:DataBreachNotification; check whether it can be reused instead.</td></tr>
-          </tbody>
-        </table>
-      </section>
       <section id="dpv-DataEvaluation">
         <h4>Data Evaluation</h4>
         <table class="def">
@@ -1623,7 +1582,6 @@
             <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Not Required lists (CN20, CN48)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#dpv-Documentation</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (tech:Documentation); check whether it can be reused instead.</td></tr>
           </tbody>
         </table>
       </section>
@@ -2748,22 +2706,6 @@
             <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Not Required lists (CN21)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#sector-health-PatientCareBilling</code></td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="sector-health-PatientInformationManagement">
-        <h4>Patient Information Management</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#sector-health-PatientInformationManagement</code></td></tr>
-            <tr><th>Term</th><td>sector-health-PatientInformationManagement</td></tr>
-            <tr><th>Label</th><td>Patient Information Management</td></tr>
-            <tr><th>Definition</th><td>The management of patient and client information by individually active health service providers.</td></tr>
-            <tr><th>Parent</th><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Not Required lists (CN21)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#sector-health-PatientInformationManagement</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (sector-health:PatientInformationManagement); check whether it can be reused instead.</td></tr>
           </tbody>
         </table>
       </section>
@@ -7022,7 +6964,6 @@
           <tr data-src="notrequired"><td><a href="#dpv-LimitedPublicArea">dpv-LimitedPublicArea</a></td><td>Limited Public Area</td><td><a href="https://w3id.org/dpv/loc#Locality"><code>loc:Locality</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-MemberStateTerritory">dpv-MemberStateTerritory</a></td><td>Member State Territory</td><td><a href="https://w3id.org/dpv#Locality"><code>dpv:Locality</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-MultiOccupancyProperty">dpv-MultiOccupancyProperty</a></td><td>Multi Occupancy Property</td><td><a href="https://w3id.org/dpv/loc#Locality"><code>loc:Locality</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
-          <tr data-src="required"><td><a href="#loc-PersonalSpace">loc-PersonalSpace</a></td><td>Personal Space</td><td><a href="https://w3id.org/dpv#LocationLocality"><code>dpv:LocationLocality</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="notrequired"><td><a href="#dpv-PotentiallyHazardousLocation">dpv-PotentiallyHazardousLocation</a></td><td>Potentially Hazardous Location</td><td><a href="https://w3id.org/dpv#Location"><code>dpv:Location</code></a></td><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
           <tr data-src="required"><td><a href="#loc-PreSchool">loc-PreSchool</a></td><td>Pre School</td><td><a href="#loc-EducationalInstitution"><code>hapt:loc-EducationalInstitution</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#loc-Prison">loc-Prison</a></td><td>Prison</td><td><a href="https://w3id.org/dpv#LocationLocality"><code>dpv:LocationLocality</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
@@ -7180,22 +7121,6 @@
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#loc-MultiOccupancyProperty</code></td></tr>
             <tr class="review"><th>Review Note</th><td>Parent loc:Locality was not found in DPV 2.3.</td></tr>
             <tr class="review"><th>Review Note</th><td>Merged: the condition files use <code>dpv-MultiOccupancyProperty</code>; the previous index named this term <code>loc-MultiOccupancyProperty</code>. The condition-file spelling is used for the IRI.</td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="loc-PersonalSpace">
-        <h4>Personal Space</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#loc-PersonalSpace</code></td></tr>
-            <tr><th>Term</th><td>loc-PersonalSpace</td></tr>
-            <tr><th>Label</th><td>Personal Space</td></tr>
-            <tr><th>Definition</th><td>Refers to private areas such as homes or personal environments, where data processing even with consent may infringe on privacy due to the sensitive nature of the setting.</td></tr>
-            <tr><th>Parent</th><td><a href="https://w3id.org/dpv#LocationLocality"><code>dpv:LocationLocality</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Required lists: AT (conditions C90)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#loc-PersonalSpace</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (dpv:PersonalSpace); check whether it can be reused instead.</td></tr>
           </tbody>
         </table>
       </section>
@@ -7746,20 +7671,18 @@
     <table class="overview">
       <thead><tr><th>Term</th><th>Label</th><th>Parent</th><th>Source condition</th></tr></thead>
       <tbody>
-          <tr data-src="required"><td><a href="#risk-ContractExclusion">risk-ContractExclusion</a></td><td>Contract Exclusion</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#dpv-ContractExclusion">dpv-ContractExclusion</a></td><td>Contract Exclusion</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ContractRefused">risk-ContractRefused</a></td><td>Contract Refused</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-ContractSuspension">risk-ContractSuspension</a></td><td>Contract Suspension</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-ContractTerminated">risk-ContractTerminated</a></td><td>Contract Terminated</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#dpv-ContractSuspension">dpv-ContractSuspension</a></td><td>Contract Suspension</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ImpactOnCareer">risk-ImpactOnCareer</a></td><td>Impact On Career</td><td><a href="https://w3id.org/dpv#Impact"><code>dpv:Impact</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required annex3"><td><a href="#risk-ImpactOnContract">risk-ImpactOnContract</a></td><td>Impact On Contract</td><td><a href="https://w3id.org/dpv#Impact"><code>dpv:Impact</code></a></td><td><span class="badge b-req">DPIA Required</span> <span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="required"><td><a href="#risk-InsufficientProtection">risk-InsufficientProtection</a></td><td>Insufficient Protection</td><td><a href="https://w3id.org/dpv/risk#QualityInsufficient"><code>risk:QualityInsufficient</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#dpv-LegalEffect">dpv-LegalEffect</a></td><td>Legal Effect Risk</td><td><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-LegalEffect">risk-LegalEffect</a></td><td>Legal Effect Risk</td><td><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
+          <tr data-src="required"><td><a href="#risk-LegalEffects">risk-LegalEffects</a></td><td>Legal Effects</td><td><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-LimitRights">risk-LimitRights</a></td><td>Limit Rights</td><td><a href="https://w3id.org/dpv/risk#RightsImpact"><code>risk:RightsImpact</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-PropertyLoss">risk-PropertyLoss</a></td><td>Property Loss</td><td><a href="https://w3id.org/dpv/risk#FinancialLoss"><code>risk:FinancialLoss</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="annex3"><td><a href="#risk-PublicAssistanceGranted">risk-PublicAssistanceGranted</a></td><td>Public Assistance Granted</td><td><a href="#risk-ServiceAccessAllowed"><code>hapt:risk-ServiceAccessAllowed</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="annex3"><td><a href="#risk-PublicAssistanceReduced">risk-PublicAssistanceReduced</a></td><td>Public Assistance Reduced</td><td><a href="#risk-ServiceRelatedConsequence"><code>hapt:risk-ServiceRelatedConsequence</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
-          <tr data-src="required"><td><a href="#risk-RightsExercisePrevented">risk-RightsExercisePrevented</a></td><td>Rights Exercise Prevented</td><td><a href="https://w3id.org/dpv/risk#Impact"><code>risk:Impact</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ServiceAccessAllowed">risk-ServiceAccessAllowed</a></td><td>Service Access Allowed</td><td><a href="#risk-ServiceRelatedConsequence"><code>hapt:risk-ServiceRelatedConsequence</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ServiceAccessDenied">risk-ServiceAccessDenied</a></td><td>Service Access Denied</td><td><a href="#risk-ServiceRelatedConsequence"><code>hapt:risk-ServiceRelatedConsequence</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="required"><td><a href="#risk-ServiceExclusion">risk-ServiceExclusion</a></td><td>Service Exclusion</td><td><a href="#risk-ServiceRelatedConsequence"><code>hapt:risk-ServiceRelatedConsequence</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
@@ -7768,23 +7691,24 @@
           <tr data-src="required"><td><a href="#risk-UnauthorisedReversal">risk-UnauthorisedReversal</a></td><td>Unauthorised Reversal</td><td><a href="https://w3id.org/dpv/risk#UnauthorisedActivity"><code>risk:UnauthorisedActivity</code></a></td><td><span class="badge b-req">DPIA Required</span></td></tr>
           <tr data-src="annex3"><td><a href="#risk-VotingOutcomeInfluenced">risk-VotingOutcomeInfluenced</a></td><td>Voting Outcome Influenced</td><td><a href="https://w3id.org/dpv#Impact"><code>dpv:Impact</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="annex3"><td><a href="#risk-WorkRelationshipPromotion">risk-WorkRelationshipPromotion</a></td><td>Work Relationship Promotion</td><td><a href="#risk-ImpactOnCareer"><code>hapt:risk-ImpactOnCareer</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
-          <tr data-src="annex3"><td><a href="#risk-WorkRelationshipTermination">risk-WorkRelationshipTermination</a></td><td>Work Relationship Termination</td><td><a href="#risk-ContractTerminated"><code>hapt:risk-ContractTerminated</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
+          <tr data-src="annex3"><td><a href="#risk-WorkRelationshipTermination">risk-WorkRelationshipTermination</a></td><td>Work Relationship Termination</td><td><a href="https://w3id.org/dpv#ContractTerminated"><code>dpv:ContractTerminated</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
           <tr data-src="annex3"><td><a href="#risk-WorkRelationshipTermsAffected">risk-WorkRelationshipTermsAffected</a></td><td>Work Relationship Terms Affected</td><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td><td><span class="badge b-annex">Annex III</span></td></tr>
       </tbody>
     </table>
 
-      <section id="risk-ContractExclusion">
+      <section id="dpv-ContractExclusion">
         <h4>Contract Exclusion</h4>
         <table class="def">
           <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-ContractExclusion</code></td></tr>
-            <tr><th>Term</th><td>risk-ContractExclusion</td></tr>
+            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#dpv-ContractExclusion</code></td></tr>
+            <tr><th>Term</th><td>dpv-ContractExclusion</td></tr>
             <tr><th>Label</th><td>Contract Exclusion</td></tr>
             <tr><th>Definition</th><td>Where an individual or an organisation is denied the opportunity to enter into a contract.</td></tr>
             <tr><th>Parent</th><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-ContractExclusion</code></td></tr>
+            <tr class="review"><th>Review Note</th><td>Renamed from <code>risk-ContractExclusion</code> to <code>dpv-ContractExclusion</code> following the concept register (9 November 2026).</td></tr>
           </tbody>
         </table>
       </section>
@@ -7803,34 +7727,19 @@
           </tbody>
         </table>
       </section>
-      <section id="risk-ContractSuspension">
+      <section id="dpv-ContractSuspension">
         <h4>Contract Suspension</h4>
         <table class="def">
           <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-ContractSuspension</code></td></tr>
-            <tr><th>Term</th><td>risk-ContractSuspension</td></tr>
+            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#dpv-ContractSuspension</code></td></tr>
+            <tr><th>Term</th><td>dpv-ContractSuspension</td></tr>
             <tr><th>Label</th><td>Contract Suspension</td></tr>
             <tr><th>Definition</th><td>Where an existing contract is temporarily halted or rendered inactive, such as due to suspicion of fraud, violation of terms, or negative behavioural indicators.</td></tr>
             <tr><th>Parent</th><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-ContractSuspension</code></td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="risk-ContractTerminated">
-        <h4>Contract Terminated</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-ContractTerminated</code></td></tr>
-            <tr><th>Term</th><td>risk-ContractTerminated</td></tr>
-            <tr><th>Label</th><td>Contract Terminated</td></tr>
-            <tr><th>Definition</th><td>Where an existing contract is cancelled or terminated, such as by revoking a loan, ending a subscription, or dismissing an employee.</td></tr>
-            <tr><th>Parent</th><td><a href="#risk-ImpactOnContract"><code>hapt:risk-ImpactOnContract</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Required lists: BE, HR, CY, FR, GR, IS, IT, LI, SI, ES, SE (conditions C20)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-ContractTerminated</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (dpv:ContractTerminated); check whether it can be reused instead.</td></tr>
+            <tr class="review"><th>Review Note</th><td>Renamed from <code>risk-ContractSuspension</code> to <code>dpv-ContractSuspension</code> following the concept register (9 November 2026).</td></tr>
           </tbody>
         </table>
       </section>
@@ -7859,7 +7768,7 @@
             <tr><th>Definition</th><td>Where there is an effect, positive or negative, on an existing contract, such as suspension, termination, or exclusion.</td></tr>
             <tr><th>Parent</th><td><a href="https://w3id.org/dpv#Impact"><code>dpv:Impact</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span> <span class="badge b-annex">Annex III</span></td></tr>
-            <tr><th>Source</th><td>No source recorded for this concept; the source conditions shown are those of its narrower concepts: <a href="#risk-ContractExclusion">risk-ContractExclusion</a>, <a href="#risk-ContractRefused">risk-ContractRefused</a>, <a href="#risk-ContractSuspension">risk-ContractSuspension</a>, <a href="#risk-ContractTerminated">risk-ContractTerminated</a>, <a href="#risk-WorkRelationshipTermsAffected">risk-WorkRelationshipTermsAffected</a>.</td></tr>
+            <tr><th>Source</th><td>No source recorded for this concept; the source conditions shown are those of its narrower concepts: <a href="#dpv-ContractExclusion">dpv-ContractExclusion</a>, <a href="#risk-ContractRefused">risk-ContractRefused</a>, <a href="#dpv-ContractSuspension">dpv-ContractSuspension</a>, <a href="https://w3id.org/dpv#ContractTerminated"><code>dpv:ContractTerminated</code></a>, <a href="#risk-WorkRelationshipTermsAffected">risk-WorkRelationshipTermsAffected</a>.</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-ImpactOnContract</code></td></tr>
           </tbody>
         </table>
@@ -7890,19 +7799,19 @@
             <tr><th>Parent</th><td><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Required lists: BE, HR, GR, IS, IT, LV, LI, NO, PL, SI, ES, SE (conditions C17)</td></tr>
-            <tr><th>Exact match</th><td><a href="#risk-LegalEffect"><code>hapt:risk-LegalEffect</code></a></td></tr>
+            <tr><th>Exact match</th><td><a href="#risk-LegalEffects"><code>hapt:risk-LegalEffects</code></a></td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#dpv-LegalEffect</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>Same concept as <code>hapt:risk-LegalEffect</code>, written differently in the condition files. Kept as a separate term so that every concept in the condition files resolves; consider using one spelling in the condition files.</td></tr>
+            <tr class="review"><th>Review Note</th><td>Same concept as <code>hapt:risk-LegalEffects</code>, written differently in the condition files. Kept as a separate term so that every concept in the condition files resolves; consider using one spelling in the condition files.</td></tr>
           </tbody>
         </table>
       </section>
-      <section id="risk-LegalEffect">
-        <h4>Legal Effect Risk</h4>
+      <section id="risk-LegalEffects">
+        <h4>Legal Effects</h4>
         <table class="def">
           <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-LegalEffect</code></td></tr>
-            <tr><th>Term</th><td>risk-LegalEffect</td></tr>
-            <tr><th>Label</th><td>Legal Effect Risk</td></tr>
+            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-LegalEffects</code></td></tr>
+            <tr><th>Term</th><td>risk-LegalEffects</td></tr>
+            <tr><th>Label</th><td>Legal Effects</td></tr>
             <tr><th>Definition</th><td>A risk that processing results in legal effects for the data subjects.</td></tr>
             <tr><th>Parent</th><td><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
@@ -7910,6 +7819,7 @@
             <tr><th>Scope Note</th><td>Used to indicate that a processing activity may result in effects equivalent to legal consequences for data subjects, such as denial of service or exclusion from contracts.</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-LegalEffect</code></td></tr>
             <tr class="review"><th>Review Note</th><td>The condition files also use the variant <code>hapt:dpv-LegalEffect</code> for this concept; it is listed separately as an exact match so that it resolves.</td></tr>
+            <tr class="review"><th>Review Note</th><td>Renamed from <code>risk-LegalEffect</code> to <code>risk-LegalEffects</code> following the concept register (9 November 2026).</td></tr>
           </tbody>
         </table>
       </section>
@@ -7972,22 +7882,6 @@
             <tr><th>Source</th><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Annex III</a>, point 5(a) (Recital 58)</td></tr>
             <tr><th>Annex III category</th><td><a href="https://w3id.org/dpv/legal/eu/aiact#HighRiskAISystem-AnnexIII-5-a"><code>eu-aiact:HighRiskAISystem-AnnexIII-5-a</code></a></td></tr>
             <tr><th>Annex III wording</th><td><i>reduced public assistance benefits, reduced public assistance services</i></td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section id="risk-RightsExercisePrevented">
-        <h4>Rights Exercise Prevented</h4>
-        <table class="def">
-          <tbody>
-            <tr><th>IRI</th><td><code>https://tyttikatariina.github.io/HAPT/#risk-RightsExercisePrevented</code></td></tr>
-            <tr><th>Term</th><td>risk-RightsExercisePrevented</td></tr>
-            <tr><th>Label</th><td>Rights Exercise Prevented</td></tr>
-            <tr><th>Definition</th><td>The risk of an activity preventing the ability of data subjects to exercise their rights.</td></tr>
-            <tr><th>Parent</th><td><a href="https://w3id.org/dpv/risk#Impact"><code>risk:Impact</code></a></td></tr>
-            <tr><th>Source condition</th><td><span class="badge b-req">DPIA Required</span></td></tr>
-            <tr><th>Source</th><td>Member State DPIA Required lists: CY, DE, GR, IT, LV, LI, LU, PL, SI, ES (conditions C19)</td></tr>
-            <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#risk-RightsExercisePrevented</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>Parent risk:Impact was not found in DPV 2.3.<br>A concept with the same name already exists in DPV 2.3 (risk:RightsExercisePrevented); check whether it can be reused instead.</td></tr>
           </tbody>
         </table>
       </section>
@@ -8125,7 +8019,7 @@
             <tr><th>Term</th><td>risk-WorkRelationshipTermination</td></tr>
             <tr><th>Label</th><td>Work Relationship Termination</td></tr>
             <tr><th>Definition</th><td>Where a decision results in the termination of a work-related contractual relationship. <span class="draft" title="Draft definition">†</span></td></tr>
-            <tr><th>Parent</th><td><a href="#risk-ContractTerminated"><code>hapt:risk-ContractTerminated</code></a></td></tr>
+            <tr><th>Parent</th><td><a href="https://w3id.org/dpv#ContractTerminated"><code>dpv:ContractTerminated</code></a></td></tr>
             <tr><th>Source condition</th><td><span class="badge b-annex">Annex III</span></td></tr>
             <tr><th>Source</th><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Annex III</a>, point 4(b) (Recital 57)</td></tr>
             <tr><th>Annex III category</th><td><a href="https://w3id.org/dpv/legal/eu/aiact#HighRiskAISystem-AnnexIII-4-b"><code>eu-aiact:HighRiskAISystem-AnnexIII-4-b</code></a></td></tr>
@@ -8769,7 +8663,6 @@
             <tr><th>Source condition</th><td><span class="badge b-notreq">DPIA Not Required</span></td></tr>
             <tr><th>Source</th><td>Member State DPIA Not Required lists (CN1)</td></tr>
             <tr><th>Previous IRI</th><td><code>https://tyttikatariina.github.io/IMPACTO/#dpv-RiskLevelNotHigh</code></td></tr>
-            <tr class="review"><th>Review Note</th><td>A concept with the same name already exists in DPV 2.3 (eu-aiact:RiskLevelNotHigh); check whether it can be reused instead.</td></tr>
           </tbody>
         </table>
       </section>
