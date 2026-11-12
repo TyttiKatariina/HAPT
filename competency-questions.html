@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HAPT Competency Questions</title>
+
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+    var respecConfig = {
+      specStatus: "unofficial",
+      shortName: "HAPT-CQ",
+      title: "HAPT Competency Questions",
+      subtitle: "Draft requirements and use cases for HAPT: High-Risk AI and data Processing Terms",
+      latestVersion: "https://tyttikatariina.github.io/HAPT/competency-questions.html",
+      github: { repoURL: "https://github.com/tyttikatariina/HAPT", branch: "main" },
+      editors: [{ "name": "Tytti Rintamäki", "company": "ADAPT Centre, Dublin City University" }],
+      authors: [
+        { "name": "Tytti Rintamäki", "company": "ADAPT Centre, Dublin City University" },
+        { "name": "Harshvardhan J. Pandit", "url": "https://harshp.com/", "company": "AI Accountability Lab, Trinity College Dublin" },
+      ],
+      otherLinks: [{
+        key: "Related",
+        data: [
+          { value: "HAPT (High-Risk AI and data Processing Terms)", href: "https://tyttikatariina.github.io/HAPT/" },
+          { value: "IMPACTO (Impact Assessment Ontology)", href: "https://tyttikatariina.github.io/IMPACTO/" },
+          { value: "IMPACTO Competency Questions", href: "https://tyttikatariina.github.io/IMPACTO/competency-questions.html" },
+        ],
+      }],
+    };
+  </script>
+
+  <style type="text/css">
+    table { border-collapse: collapse; width: 100%; margin: 0.5em 0 1em; }
+    th, td { border: thin solid #555; padding: 0.2cm 0.3cm; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    thead th { background-color: #FDDF95; }
+    table.orsd td:first-child { width: 22%; font-weight: bold; }
+    tr.group td { background-color: #FFF4D6; font-weight: bold; }
+    .col { font-size: 0.85em; color: #555; }
+    .badge { display: inline-block; padding: 0.05em 0.5em; border-radius: 0.8em; font-size: 0.85em; white-space: nowrap; border: 1px solid transparent; }
+    .b-req    { background: #FBE1E1; border-color: #D9A3A3; color: #6B1F1F; }
+    .b-notreq { background: #DFF1E3; border-color: #9CCBA6; color: #1D4D27; }
+    .b-annex  { background: #DDE8FA; border-color: #9DB5E0; color: #1C3766; }
+    pre { overflow-x: auto; }
+  </style>
+</head>
+
+<body>
+  <section id="abstract">
+    <p>This page sets out the requirements of <a href="https://tyttikatariina.github.io/HAPT/">HAPT</a> as an Ontology Requirements
+      Specification Document (ORSD) and the competency questions HAPT must answer to describe a high-risk use case: a processing
+      activity that is, or is not, required to have a DPIA under the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR</a>, or an AI system that is high-risk under
+      Annex III of the <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act</a>. Three use cases taken from the HAPT condition files illustrate the questions.</p>
+  </section>
+
+  <section id="sotd">
+    <p>This is a draft. The competency questions have not yet been evaluated with SPARQL queries or SHACL shapes.</p>
+  </section>
+
+  <section id="orsd">
+    <h2>Ontology Requirements Specification</h2>
+    <table class="orsd">
+      <tbody>
+        <tr><td>Purpose</td><td>The purpose of HAPT is to provide a controlled vocabulary of the terms needed to describe processing activities
+          and AI systems precisely enough to determine whether they meet a condition under which an impact assessment is, or is not, required.</td></tr>
+        <tr><td>Scope</td><td>The processing activities listed in the Data Protection Authority blacklists (DPIA Required lists, <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR</a>
+          Art. 35(4)) and whitelists (DPIA Not Required lists, Art. 35(5)), the criteria of GDPR Art. 35(3) and the
+          <a href="https://ec.europa.eu/newsroom/article29/items/611236">EDPB-endorsed DPIA guidelines</a>, and the high-risk AI systems in <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act</a> Annex III.</td></tr>
+        <tr><td>Implementation language</td><td>W3C <a href="https://www.w3.org/TR/rdf11-schema/">RDFS</a> and <a href="https://www.w3.org/TR/skos-reference/">SKOS</a>.</td></tr>
+        <tr><td>Intended end-users</td><td>Organisations who create and use DPIAs and FRIAs, and maintainers of legal compliance vocabularies such as DPV.</td></tr>
+        <tr><td>Intended uses</td><td>
+          <b>Use 1:</b> to describe use cases of data processing and AI systems.<br>
+          <b>Use 2:</b> to identify the conditions in law and guidance under which a use case requires, or does not require, an impact assessment.</td></tr>
+        <tr><td>Non-functional requirements</td><td>
+          <b>NFR1 Interoperability:</b> the vocabulary should extend existing legal compliance ontologies such as <a href="https://w3id.org/dpv">DPV</a>, <a href="https://w3id.org/airo">AIRO</a> and <a href="https://w3id.org/vair">VAIR</a>.<br>
+          <b>NFR2 Scalability:</b> the vocabulary should be adaptable and extensible.<br>
+          <b>NFR3 Usability:</b> the vocabulary should be usable by legal and non-legal stakeholders.</td></tr>
+        <tr><td>Functional requirements</td><td>The competency questions in <a href="#cqs"></a>, grouped as HCQG1 (describing a use case) and HCQG2
+          (exceptions and the sources of a DPIA requirement).</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="cqs">
+    <h2>Competency Questions</h2>
+    <p>There is one competency question for each column of the Annex III analysis, which is the information needed to compare a use case
+      with the DPIA and Annex III conditions. Where AIRO already asks the same question for identifying high-risk AI systems
+      (<a href="https://doi.org/10.3233/SSW220008">Golpayegani et al., 2022</a>, Table 1), the HAPT question follows its wording and the AIRO concepts are listed
+      as equivalents. HCQ14 is proposed in addition to the columns so that DPIA Not Required conditions are covered.</p>
+    <table>
+      <thead><tr><th style="width:6%">ID</th><th style="width:20%">Competency question<br><span class="col">Annex III column</span></th>
+        <th style="width:13%">Law</th><th>Concepts</th><th style="width:17%">Relations</th><th style="width:19%">AIRO</th></tr></thead>
+      <tbody>
+<tr class="group"><td colspan="6">HCQG1: Describing a use case</td></tr>
+<tr><td>HCQ1</td><td>Which sector is the use case intended to be used in?<br><span class="col">Sector</span></td><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Annex III</a></td><td><a href="https://w3id.org/dpv#Sector"><code>dpv:Sector</code></a>, <a href="https://w3id.org/dpv/legal/eu/aiact#EmploymentSector"><code>eu-aiact:EmploymentSector</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#eu-aiact-PublicServicesAndBenefits"><code>hapt:eu-aiact-PublicServicesAndBenefits</code></a>, <a href="https://w3id.org/vair#PrivateService"><code>vair:PrivateService</code></a></td><td><a href="https://w3id.org/dpv#hasSector"><code>dpv:hasSector</code></a></td><td>“What domain is the system intended to be used in?”<br><a href="https://w3id.org/airo#Domain"><code>airo:Domain</code></a>, <a href="https://w3id.org/airo#isAppliedWithinDomain"><code>airo:isAppliedWithinDomain</code></a></td></tr>
+<tr><td>HCQ2</td><td>What is the intended purpose of the use case?<br><span class="col">Purpose</span></td><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Art. 3(12), Annex III</a><br><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(7)(a)</a></td><td><a href="https://w3id.org/dpv#Purpose"><code>dpv:Purpose</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#dpv-Identification"><code>hapt:dpv-Identification</code></a>, <a href="https://w3id.org/vair#AssessingCreditworthiness"><code>vair:AssessingCreditworthiness</code></a></td><td><a href="https://w3id.org/dpv#hasPurpose"><code>dpv:hasPurpose</code></a></td><td>“What is the intended purpose of the system?”<br><a href="https://w3id.org/airo#Purpose"><code>airo:Purpose</code></a>, <a href="https://w3id.org/airo#hasPurpose"><code>airo:hasPurpose</code></a></td></tr>
+<tr><td>HCQ3</td><td>Which legal or similarly significant effects can the use case produce?<br><span class="col">Produces Legal Effects</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 22(1), 35(3)(a)</a><br><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Art. 86(1)</a></td><td><a href="https://tyttikatariina.github.io/HAPT/#eu-aiact-PotentialLegalEffects"><code>hapt:eu-aiact-PotentialLegalEffects</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#risk-LegalEffects"><code>hapt:risk-LegalEffects</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#dpv-LegalEffect"><code>hapt:dpv-LegalEffect</code></a></td><td><a href="https://w3id.org/dpv#hasRisk"><code>dpv:hasRisk</code></a>, <a href="https://w3id.org/dpv#hasConsequence"><code>dpv:hasConsequence</code></a></td><td><a href="https://w3id.org/airo#Consequence"><code>airo:Consequence</code></a>, <a href="https://w3id.org/airo#hasConsequence"><code>airo:hasConsequence</code></a></td></tr>
+<tr><td>HCQ4</td><td>In which context is the processing carried out?<br><span class="col">Processing Context</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(1), 35(3)</a><br><a href="https://ec.europa.eu/newsroom/article29/items/611236">WP248 rev.01 criteria</a></td><td><a href="https://w3id.org/dpv#Context"><code>dpv:Context</code></a>, <a href="https://w3id.org/dpv#EvaluationOfIndividuals"><code>dpv:EvaluationOfIndividuals</code></a>, <a href="https://w3id.org/dpv#AutomatedDecisionMaking"><code>dpv:AutomatedDecisionMaking</code></a>, <a href="https://w3id.org/dpv/legal/eu/gdpr#Profiling"><code>eu-gdpr:Profiling</code></a>, <a href="https://w3id.org/dpv#ProcessingScale"><code>dpv:ProcessingScale</code></a>, <a href="https://w3id.org/dpv#Location"><code>dpv:Location</code></a>, <a href="https://w3id.org/dpv#PubliclyAccessibleSpace"><code>dpv:PubliclyAccessibleSpace</code></a></td><td><a href="https://w3id.org/dpv#hasContext"><code>dpv:hasContext</code></a>, <a href="https://w3id.org/dpv#hasProcessing"><code>dpv:hasProcessing</code></a>, <a href="https://w3id.org/dpv#hasProcessingScale"><code>dpv:hasProcessingScale</code></a>, <a href="https://w3id.org/dpv#hasLocation"><code>dpv:hasLocation</code></a></td><td>“In which environment is the system used?”<br><a href="https://w3id.org/airo#LocalityOfUse"><code>airo:LocalityOfUse</code></a>, <a href="https://w3id.org/airo#isUsedWithinLocality"><code>airo:isUsedWithinLocality</code></a></td></tr>
+<tr><td>HCQ5</td><td>What technologies and capabilities are utilised in the use case?<br><span class="col">Technology</span></td><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Art. 3(1)</a><br><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(1)</a></td><td><a href="https://w3id.org/dpv#Technology"><code>dpv:Technology</code></a>, <a href="https://w3id.org/dpv/ai#AISystem"><code>ai:AISystem</code></a>, <a href="https://w3id.org/dpv/ai#Capability"><code>ai:Capability</code></a>, <a href="https://w3id.org/dpv/ai#RemoteBiometricIdentification"><code>ai:RemoteBiometricIdentification</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#tech-AutomatedAssistance"><code>hapt:tech-AutomatedAssistance</code></a></td><td><a href="https://w3id.org/dpv#isImplementedUsingTechnology"><code>dpv:isImplementedUsingTechnology</code></a>, <a href="https://w3id.org/dpv/ai#hasCapability"><code>ai:hasCapability</code></a></td><td>“What techniques are utilised in the system?”<br><a href="https://w3id.org/airo#AITechnique"><code>airo:AITechnique</code></a>, <a href="https://w3id.org/airo#usesTechnique"><code>airo:usesTechnique</code></a>, <a href="https://w3id.org/airo#AICapability"><code>airo:AICapability</code></a>, <a href="https://w3id.org/airo#hasCapability"><code>airo:hasCapability</code></a></td></tr>
+<tr><td>HCQ6</td><td>Which special categories of personal data are processed in the use case?<br><span class="col">Special categories of personal data</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 9(1), 35(3)(b)</a></td><td><a href="https://w3id.org/dpv#SpecialCategoryPersonalData"><code>dpv:SpecialCategoryPersonalData</code></a>, <a href="https://w3id.org/dpv/legal/eu/gdpr#BiometricData"><code>eu-gdpr:BiometricData</code></a>, <a href="https://w3id.org/dpv/pd#Biometric"><code>pd:Biometric</code></a></td><td><a href="https://w3id.org/dpv#hasPersonalData"><code>dpv:hasPersonalData</code></a></td><td>—</td></tr>
+<tr><td>HCQ7</td><td>Which other categories of personal data are processed in the use case?<br><span class="col">non special categories of personal data</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 4(1)</a></td><td><a href="https://w3id.org/dpv#PersonalData"><code>dpv:PersonalData</code></a>, <a href="https://w3id.org/dpv/pd#Contact"><code>pd:Contact</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#pd-FacialImages"><code>hapt:pd-FacialImages</code></a></td><td><a href="https://w3id.org/dpv#hasPersonalData"><code>dpv:hasPersonalData</code></a>, <a href="https://w3id.org/dpv#hasData"><code>dpv:hasData</code></a>, <a href="https://w3id.org/dpv#hasDataSource"><code>dpv:hasDataSource</code></a></td><td>—</td></tr>
+<tr><td>HCQ8</td><td>Who is the subject of the use case?<br><span class="col">AI/ Data subject</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 4(1)</a><br><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Art. 27(1)(c)</a></td><td><a href="https://w3id.org/dpv#DataSubject"><code>dpv:DataSubject</code></a>, <a href="https://w3id.org/dpv#HumanSubject"><code>dpv:HumanSubject</code></a>, <a href="https://w3id.org/dpv#NaturalPerson"><code>dpv:NaturalPerson</code></a>, <a href="https://w3id.org/dpv#VulnerableHuman"><code>dpv:VulnerableHuman</code></a></td><td><a href="https://w3id.org/dpv#hasDataSubject"><code>dpv:hasDataSubject</code></a>, <a href="https://w3id.org/dpv#hasHumanSubject"><code>dpv:hasHumanSubject</code></a></td><td>“Who is the subject of the system?”<br><a href="https://w3id.org/airo#AISubject"><code>airo:AISubject</code></a>, <a href="https://w3id.org/airo#hasAISubject"><code>airo:hasAISubject</code></a></td></tr>
+<tr><td>HCQ9</td><td>Who is the organisation that deploys the AI system or carries out the processing?<br><span class="col">Organisation / Agent</span></td><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Art. 3(4), 27(1)</a><br><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 4(7)</a></td><td><a href="https://w3id.org/dpv/legal/eu/aiact#AIDeployer"><code>eu-aiact:AIDeployer</code></a>, <a href="https://w3id.org/dpv#DataController"><code>dpv:DataController</code></a>, <a href="https://w3id.org/dpv#Organisation"><code>dpv:Organisation</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#dpv-Employer"><code>hapt:dpv-Employer</code></a></td><td><a href="https://w3id.org/dpv/tech#hasDeployer"><code>tech:hasDeployer</code></a>, <a href="https://w3id.org/dpv#hasEntity"><code>dpv:hasEntity</code></a></td><td>“Who is the intended user of the system?”<br><a href="https://w3id.org/airo#AIDeployer"><code>airo:AIDeployer</code></a>, <a href="https://w3id.org/airo#isDeployedBy"><code>airo:isDeployedBy</code></a>, <a href="https://w3id.org/airo#hasAIUser"><code>airo:hasAIUser</code></a></td></tr>
+<tr class="group"><td colspan="6">HCQG2: Exceptions and the sources of a DPIA requirement</td></tr>
+<tr><td>HCQ10</td><td>How is an exception to a high-risk use case represented?<br><span class="col">Exception</span></td><td><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">AI Act Annex III 1(a), 5(b), Art. 6(3)</a><br><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(5)</a></td><td><a href="https://w3id.org/dpv/legal/eu/aiact#BiometricVerification"><code>eu-aiact:BiometricVerification</code></a>, <a href="https://w3id.org/dpv/sector/finance#FraudManagement"><code>sector-finance:FraudManagement</code></a>, <a href="https://w3id.org/dpv/pd#Biometric"><code>pd:Biometric</code></a></td><td><a href="https://w3id.org/dpv#isNotApplicableFor"><code>dpv:isNotApplicableFor</code></a></td><td>—</td></tr>
+<tr><td>HCQ11</td><td>Which GDPR provision requires a DPIA for the use case?<br><span class="col">DPIA required by GDPR</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(1), 35(3)</a></td><td><a href="https://w3id.org/dpv/legal/eu/gdpr#DPIARequired"><code>eu-gdpr:DPIARequired</code></a>, <a href="https://w3id.org/dpv/legal/eu/gdpr#C9"><code>eu-gdpr:C9</code></a></td><td><a href="https://w3id.org/dpv#hasStatus"><code>dpv:hasStatus</code></a>, <a href="https://tyttikatariina.github.io/HAPT/#eu-gdpr-hasDPIARequiredCondition"><code>hapt:eu-gdpr-hasDPIARequiredCondition</code></a></td><td>—</td></tr>
+<tr><td>HCQ12</td><td>Do the EDPB guidelines indicate that a DPIA is required for the use case?<br><span class="col">EDPB</span></td><td><a href="https://ec.europa.eu/newsroom/article29/items/611236">WP248 rev.01, endorsed by the EDPB</a></td><td><a href="https://tyttikatariina.github.io/HAPT/#eu-gdpr-DPIARequiredByEDPBGuidelines"><code>hapt:eu-gdpr-DPIARequiredByEDPBGuidelines</code></a></td><td><a href="https://w3id.org/dpv#hasStatus"><code>dpv:hasStatus</code></a></td><td>—</td></tr>
+<tr><td>HCQ13</td><td>Which jurisdictions will this use case always require a DPIA?<br><span class="col">DPIA required by member states</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(4)</a></td><td><a href="https://tyttikatariina.github.io/IMPACTO/#eu-gdpr-DPIARequiredProcess"><code>impacto:eu-gdpr-DPIARequiredProcess</code></a>, <a href="https://w3id.org/dpv#Jurisdiction"><code>dpv:Jurisdiction</code></a></td><td><a href="https://tyttikatariina.github.io/HAPT/#eu-gdpr-hasDPIARequiredCondition"><code>hapt:eu-gdpr-hasDPIARequiredCondition</code></a>, <a href="https://w3id.org/dpv#hasJurisdiction"><code>dpv:hasJurisdiction</code></a></td><td>—</td></tr>
+<tr><td>HCQ14</td><td>Which jurisdictions do not require a DPIA for this use case?<br><span class="col">(proposed; not a sheet column)</span></td><td><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">GDPR Art. 35(5)</a></td><td><a href="https://tyttikatariina.github.io/IMPACTO/#eu-gdpr-DPIANotRequiredProcess"><code>impacto:eu-gdpr-DPIANotRequiredProcess</code></a>, <a href="https://w3id.org/dpv#Jurisdiction"><code>dpv:Jurisdiction</code></a></td><td><a href="https://w3id.org/dpv#hasJurisdiction"><code>dpv:hasJurisdiction</code></a></td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <section id="overlap">
+      <h3>Overlap with the IMPACTO competency questions</h3>
+      <p>HAPT describes the use case; <a href="https://tyttikatariina.github.io/IMPACTO/competency-questions.html">IMPACTO</a> describes the
+        impact assessment of it. The questions meet where the description decides whether, and by whom, an assessment must be carried out.</p>
+      <table>
+        <thead><tr><th style="width:14%">HAPT</th><th style="width:12%">IMPACTO</th><th>Shared topic</th></tr></thead>
+        <tbody>
+          <tr><td>HCQ11</td><td>CQ1</td><td>Both ask why a DPIA is required. IMPACTO records the outcome on the DPIA necessity assessment; HAPT records which GDPR provision or condition makes the use case DPIA required.</td></tr>
+          <tr><td>HCQ13</td><td>CQ4</td><td>Same question about jurisdictions. HAPT answers it for a use case through its links to the Member State conditions; IMPACTO answers it for an organisation&#x27;s own process.</td></tr>
+          <tr><td>HCQ14</td><td>CQ3</td><td>Both describe a process that does not require a DPIA under Art. 35(5).</td></tr>
+          <tr><td>HCQ9</td><td>CQ2, CQ8</td><td>The organisation in HAPT is the controller in a DPIA (IMPACTO CQ2) and the deployer in a FRIA (IMPACTO CQ8).</td></tr>
+          <tr><td>HCQ10</td><td>CQ9</td><td>Exceptions: HAPT records the exceptions written into Annex III and the DPIA lists; IMPACTO records the Art. 27(1) exemption from the FRIA.</td></tr>
+          <tr><td>HCQ2, HCQ5, HCQ8</td><td>CQ11</td><td>Purpose, technology and the persons affected are the content of a FRIA under Art. 27(1)(a) and (c), so a HAPT description can be reused in an IMPACTO FRIA.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <section id="usecases">
+    <h2>Use Cases</h2>
+    <p>The three use cases are taken unchanged from the HAPT condition files and are collected in <a href="example.ttl">example.ttl</a>.
+      All three concern biometrics, so together they show the same kind of processing where a DPIA is required, where it is not,
+      and where it is a high-risk AI system under the AI Act.</p>
+    <table>
+      <thead><tr><th style="width:12%">Use case</th><th style="width:14%">Source</th><th>Summary</th><th style="width:22%">Competency questions answered</th></tr></thead>
+      <tbody>
+<tr><td><code>ie:C11</code></td><td><span class="badge b-req">DPIA required</span></td><td>Ireland requires a DPIA for any processing of biometric data.</td><td>HCQ6, HCQ13</td></tr>
+<tr><td><code>at:CN15</code></td><td><span class="badge b-notreq">DPIA not required</span></td><td>Austria does not require a DPIA for controlling access to buildings with image or video systems, as long as no biometric data is processed.</td><td>HCQ2, HCQ4, HCQ5, HCQ7, HCQ10, HCQ14</td></tr>
+<tr><td><code>annex3:C1a</code></td><td><span class="badge b-annex">Annex III</span></td><td>Remote biometric identification systems are high-risk under AI Act Annex III point 1(a), except biometric verification; the GDPR, the EDPB guidelines and 26 Member State lists require a DPIA for them.</td><td>HCQ2, HCQ3, HCQ5, HCQ6, HCQ8, HCQ10, HCQ11, HCQ12, HCQ13</td></tr>
+      </tbody>
+    </table>
+    <p>HCQ1 (sector) and HCQ9 (organisation) are not answered by these three use cases; Annex III use cases such as <code>annex3:C4a</code>
+      (recruitment) answer both.</p>
+
+    <section id="uc-ie-C11">
+      <h3>DPIA required: <code>ie:C11</code></h3>
+      <p>Ireland requires a DPIA for any processing of biometric data. Copied unchanged from <code>DPIARequiredConditions.ttl</code>.</p>
+      <pre class="nohighlight">ie:C11 a impacto:eu-gdpr-DPIARequiredProcess ;
+	skos:definition &quot;A process which requires a DPIA according to the Data Protection Authorities of Ireland and which involves processing of Biometric data&quot;@en ;
+	dpv:hasPersonalData eu-gdpr:BiometricData ;
+	dct:source ie:DPIARequiredList ;
+	dpv:hasJurisdiction loc:IE .</pre>
+    </section>
+    <section id="uc-at-CN15">
+      <h3>DPIA not required: <code>at:CN15</code></h3>
+      <p>Austria does not require a DPIA for controlling access to buildings with image or video systems, as long as no biometric data is processed. Copied unchanged from <code>DPIANotRequiredConditions-2.ttl</code>.</p>
+      <pre class="nohighlight">at:CN15 a impacto:eu-gdpr-DPIANotRequiredProcess ;
+    skos:definition &quot;A process which does not require a DPIA according to the Data Protection Authorities of Austria and which involves: Control of the authorization of access to buildings and delimited areas by the owner or 
+authorized user with the help of systems that process personal data with automated assistance, whereby no biometric data of data subjects are processed. The mere real-time reproduction of facial images is covered by this exception.&quot;@en ;
+    dpv:hasDataSource hapt:dpv-ImageData, hapt:dpv-VideoData, hapt:pd-FacialImages ;
+    dpv:isImplementedUsingTechnology hapt:tech-AutomatedAssistance ;
+	dpv:hasPurpose dpv:PhysicalAccessControl ;
+	dpv:hasLocation dpv:PrivateLocation ;
+	dpv:isNotApplicableFor pd:Biometric ;
+    dct:source at:DPIANotRequiredList ;
+    dct:identifier &quot;CN15&quot; ;
+    dpv:hasJurisdiction loc:AT .</pre>
+    </section>
+    <section id="uc-annex3-C1a">
+      <h3>Annex III: <code>annex3:C1a</code></h3>
+      <p>Remote biometric identification systems are high-risk under AI Act Annex III point 1(a), except biometric verification; the GDPR, the EDPB guidelines and 26 Member State lists require a DPIA for them. Copied unchanged from <code>AnnexIIIConditions.ttl</code>.</p>
+      <pre class="nohighlight">annex3:C1a a eu-aiact:HighRiskAISystem-AnnexIII-1-a ;
+    dct:identifier &quot;1a&quot; ;
+    skos:definition &quot;1. Biometrics, insofar as their use is permitted under relevant Union or national law: (a) Remote biometric identification systems. This shall not include AI systems intended to be used for biometric verification whose sole purpose is to confirm that a specific natural person is the person he or she claims to be;&quot;@en ;
+    dpv:hasPurpose hapt:dpv-Identification ;
+    dpv:hasRisk hapt:eu-aiact-PotentialLegalEffects ;
+    dpv:isImplementedUsingTechnology ai:AISystem ;
+    ai:hasCapability ai:RemoteBiometricIdentification ;
+    dpv:hasPersonalData eu-gdpr:BiometricData ;
+    dpv:hasHumanSubject dpv:NaturalPerson ;
+    dpv:isNotApplicableFor eu-aiact:BiometricVerification ;
+    dpv:hasStatus eu-gdpr:DPIARequired, hapt:eu-gdpr-DPIARequiredByEDPBGuidelines ;
+    hapt:eu-gdpr-hasDPIARequiredCondition eu-gdpr:C9, at-gdpr:C11, be:C11, bg:C11, hr:C11, cz:C11, dk:C11, ee:C11, fi:C11, fr:C11, de:C11, gr:C11, hu:C11, is_:C11, ie:C11, lv:C11, li:C11, lt:C11, lu:C11, mt:C11, nl:C11, no:C11, pl:C11, pt:C11, sk:C11, si:C11, es:C11 ;
+    skos:note &quot;DPIA required by member states: AT BE BG HR CZ DK EE FI FR DE GR HU IS IE LV LI LT LU MT NL NO PL PT SK SI ES (Biometrics)&quot;@en ;
+    dct:source &quot;AI Act Annex III 1(a)&quot; ;
+    dpv:hasJurisdiction loc:EU .</pre>
+    </section>
+  </section>
+
+</body>
+</html>
