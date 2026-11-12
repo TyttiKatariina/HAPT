@@ -1,0 +1,89 @@
+@prefix ai: <https://w3id.org/dpv/ai#> .
+@prefix annex3: <https://tyttikatariina.github.io/HAPT/AnnexIII#> .
+@prefix at: <https://w3id.org/dpv/legal/at#> .
+@prefix at-gdpr: <https://w3id.org/dpv/legal/eu/at-gdpr#> .
+@prefix be: <https://w3id.org/dpv/legal/be#> .
+@prefix bg: <https://w3id.org/dpv/legal/bg#> .
+@prefix cz: <https://w3id.org/dpv/legal/cz#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix de: <https://w3id.org/dpv/legal/de#> .
+@prefix dk: <https://w3id.org/dpv/legal/dk#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix ee: <https://w3id.org/dpv/legal/ee#> .
+@prefix es: <https://w3id.org/dpv/legal/es#> .
+@prefix eu-aiact: <https://w3id.org/dpv/legal/eu/aiact#> .
+@prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix fi: <https://w3id.org/dpv/legal/fi#> .
+@prefix fr: <https://w3id.org/dpv/legal/fr#> .
+@prefix gr: <https://w3id.org/dpv/legal/gr#> .
+@prefix hapt: <https://tyttikatariina.github.io/HAPT/#> .
+@prefix hr: <https://w3id.org/dpv/legal/hr#> .
+@prefix hu: <https://w3id.org/dpv/legal/hu#> .
+@prefix ie: <https://w3id.org/dpv/legal/ie#> .
+@prefix impacto: <https://tyttikatariina.github.io/IMPACTO/#> .
+@prefix is_: <https://w3id.org/dpv/legal/is#> .
+@prefix li: <https://w3id.org/dpv/legal/li#> .
+@prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix lt: <https://w3id.org/dpv/legal/lt#> .
+@prefix lu: <https://w3id.org/dpv/legal/lu#> .
+@prefix lv: <https://w3id.org/dpv/legal/lv#> .
+@prefix mt: <https://w3id.org/dpv/legal/mt#> .
+@prefix nl: <https://w3id.org/dpv/legal/nl#> .
+@prefix no: <https://w3id.org/dpv/legal/no#> .
+@prefix pd: <https://w3id.org/dpv/pd#> .
+@prefix pl: <https://w3id.org/dpv/legal/pl#> .
+@prefix pt: <https://w3id.org/dpv/legal/pt#> .
+@prefix si: <https://w3id.org/dpv/legal/si#> .
+@prefix sk: <https://w3id.org/dpv/legal/sk#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# =====================================================================================
+# HAPT worked examples: three use cases copied unchanged from the HAPT condition files.
+#
+#   ie:C11      DPIA Required condition (DPIARequiredConditions.ttl)
+#   at:CN15     DPIA Not Required condition (DPIANotRequiredConditions-2.ttl)
+#   annex3:C1a  AI Act Annex III use case (AnnexIIIConditions.ttl)
+#
+# All three concern biometrics, so together they show where a DPIA is required, where it
+# is not, and how the same processing is high-risk under the AI Act.
+# =====================================================================================
+
+# from DPIARequiredConditions.ttl
+ie:C11 a impacto:eu-gdpr-DPIARequiredProcess ;
+	skos:definition "A process which requires a DPIA according to the Data Protection Authorities of Ireland and which involves processing of Biometric data"@en ;
+	dpv:hasPersonalData eu-gdpr:BiometricData ;
+	dct:source ie:DPIARequiredList ;
+	dpv:hasJurisdiction loc:IE .
+
+# from DPIANotRequiredConditions-2.ttl
+# NOTE: the definition below breaks across two lines inside a "..." string, which Turtle does not allow,
+# so this file will not parse until the line break is removed. It is kept exactly as in the source file.
+at:CN15 a impacto:eu-gdpr-DPIANotRequiredProcess ;
+    skos:definition "A process which does not require a DPIA according to the Data Protection Authorities of Austria and which involves: Control of the authorization of access to buildings and delimited areas by the owner or 
+authorized user with the help of systems that process personal data with automated assistance, whereby no biometric data of data subjects are processed. The mere real-time reproduction of facial images is covered by this exception."@en ;
+    dpv:hasDataSource hapt:dpv-ImageData, hapt:dpv-VideoData, hapt:pd-FacialImages ;
+    dpv:isImplementedUsingTechnology hapt:tech-AutomatedAssistance ;
+	dpv:hasPurpose dpv:PhysicalAccessControl ;
+	dpv:hasLocation dpv:PrivateLocation ;
+	dpv:isNotApplicableFor pd:Biometric ;
+    dct:source at:DPIANotRequiredList ;
+    dct:identifier "CN15" ;
+    dpv:hasJurisdiction loc:AT .
+
+# from AnnexIIIConditions.ttl
+annex3:C1a a eu-aiact:HighRiskAISystem-AnnexIII-1-a ;
+    dct:identifier "1a" ;
+    skos:definition "1. Biometrics, insofar as their use is permitted under relevant Union or national law: (a) Remote biometric identification systems. This shall not include AI systems intended to be used for biometric verification whose sole purpose is to confirm that a specific natural person is the person he or she claims to be;"@en ;
+    dpv:hasPurpose hapt:dpv-Identification ;
+    dpv:hasRisk hapt:eu-aiact-PotentialLegalEffects ;
+    dpv:isImplementedUsingTechnology ai:AISystem ;
+    ai:hasCapability ai:RemoteBiometricIdentification ;
+    dpv:hasPersonalData eu-gdpr:BiometricData ;
+    dpv:hasHumanSubject dpv:NaturalPerson ;
+    dpv:isNotApplicableFor eu-aiact:BiometricVerification ;
+    dpv:hasStatus eu-gdpr:DPIARequired, hapt:eu-gdpr-DPIARequiredByEDPBGuidelines ;
+    hapt:eu-gdpr-hasDPIARequiredCondition eu-gdpr:C9, at-gdpr:C11, be:C11, bg:C11, hr:C11, cz:C11, dk:C11, ee:C11, fi:C11, fr:C11, de:C11, gr:C11, hu:C11, is_:C11, ie:C11, lv:C11, li:C11, lt:C11, lu:C11, mt:C11, nl:C11, no:C11, pl:C11, pt:C11, sk:C11, si:C11, es:C11 ;
+    skos:note "DPIA required by member states: AT BE BG HR CZ DK EE FI FR DE GR HU IS IE LV LI LT LU MT NL NO PL PT SK SI ES (Biometrics)"@en ;
+    dct:source "AI Act Annex III 1(a)" ;
+    dpv:hasJurisdiction loc:EU .
+
